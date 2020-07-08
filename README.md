@@ -234,3 +234,15 @@ To run this loop, copy it into a new file in nano:
 To save the file, press "Ctrl + X" and press "y" to overwrite the file. The nano controls can be found at the bottom of the screen. You now have a bash script saved in your working directory. To run the loop, run the following command:
 
 `bash Export_SecA_Loop.sh`
+
+### Step 5: Align Genes Using MUSCLE
+
+MUSCLE is a commonly used alignment software installed by default with Anvi'o. This software can be used directly from the command line, but it requires a fasta file containing all sequences to be aligned. Such a file can be easily created with a single Bash command:
+
+`awk 1 *SecA*.fa > SecA_Sequences.fa`
+
+Once you have a multifasta file, you can run MUSCLE:
+
+`muscle -in SecA_Sequences.fa -out SecA_Sequence_Alignment.afa`
+
+This alignment can then be opened in any number of programs for viewing.
